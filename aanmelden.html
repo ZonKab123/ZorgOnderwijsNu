@@ -60,10 +60,10 @@
   </section>
 
   <section class="section">
-    <div class="wrap grid grid-2" style="align-items:start">
+    <div class="wrap grid grid-2 align-start">
       <div>
         <h2>Zo werkt aanmelden</h2>
-        <ol style="padding-left:1.1rem">
+        <ol>
           <li><strong>Rondleiding.</strong> U vraagt vrijblijvend een rondleiding aan via het formulier of telefonisch.</li>
           <li><strong>Kennismaking.</strong> We bekijken samen de zorgvraag en of ZON passend is.</li>
           <li><strong>Aanmelden &amp; financiering.</strong> We helpen u op weg met de indicatie en financiering (bijv. via het zorgkantoor).</li>
@@ -76,7 +76,7 @@
       </div>
 
       <div class="card">
-        <h2 style="font-size:1.5rem">Rondleiding aanvragen</h2>
+        <h2>Rondleiding aanvragen</h2>
         <p class="form-note">Velden met * zijn verplicht. We gebruiken uw gegevens alleen om contact op te nemen over uw aanvraag.</p>
         <form class="form" data-zon-form action="/aanvraag" method="post" novalidate>
           <div class="row-2">
@@ -112,9 +112,9 @@
             <label for="website">Laat dit veld leeg</label>
             <input class="hp" id="website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
-          <div class="field" style="flex-direction:row;align-items:flex-start;display:flex;gap:.6rem">
-            <input id="akkoord" name="akkoord" type="checkbox" required style="width:auto;margin-top:.35rem">
-            <label for="akkoord" style="font-weight:400">Ik ga akkoord met het <a href="contact.html#privacy">privacybeleid</a> en geef toestemming om contact met mij op te nemen. *</label>
+          <div class="field field--checkbox">
+            <input id="akkoord" name="akkoord" type="checkbox" required>
+            <label for="akkoord">Ik ga akkoord met het <a href="contact.html#privacy">privacybeleid</a> en geef toestemming om contact met mij op te nemen. *</label>
           </div>
           <button class="btn btn--primary" type="submit">Verstuur aanvraag</button>
           <p class="form-note" data-status role="status" tabindex="-1" hidden></p>
@@ -129,7 +129,7 @@
     <div class="footer-grid">
       <div class="foot-brand">
         <img src="assets/logo-zon.png" alt="Logo Zorg en Onderwijs Nu" width="74" height="74">
-        <p style="margin-top:1rem">Ontwikkelingsgerichte dagopvang en zorg voor kinderen met een complexe zorgvraag, midden op een gewone basisschool.</p>
+        <p>Ontwikkelingsgerichte dagopvang en zorg voor kinderen met een complexe zorgvraag, midden op een gewone basisschool.</p>
         <div class="partners"><span>NSGK</span><span>HandicapNL</span><span>BVKZ</span></div>
       </div>
       <div>
