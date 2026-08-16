@@ -6,7 +6,7 @@
 
   <!-- ===== Security by design (client-side headers) ===== -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; upgrade-insecure-requests">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; frame-src https://www.google.com https://maps.google.com; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; upgrade-insecure-requests">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light">
@@ -51,6 +51,7 @@
         </ul>
       </li>
       <li><a href="nieuws.html">Nieuws</a></li>
+      <li><a href="vacatures.html">Vacatures</a></li>
       <li><a href="anbi.html">ANBI</a></li>
       <li><a href="vrienden.html">Vrienden van ZON</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -65,9 +66,9 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <span class="eyebrow">Dagopvang &amp; onderwijs · 0–13 jaar</span>
+        <span class="eyebrow">Welkom bij Zorg en Onderwijs Nu</span>
         <h1>Ieder kind <span class="hl">hoort erbij</span></h1>
-        <p class="lead">ZON verzorgt ontwikkelingsgerichte dagopvang voor kinderen met een complexe zorgvraag — midden op een gewone basisschool. Zo groeien kinderen mét en zónder beperking samen op: samen leren, samen spelen.</p>
+        <p class="lead">ZON biedt dagopvang voor kinderen met een complexe zorgvraag aan — midden op een gewone basisschool. Zo groeien kinderen mét en zónder beperking samen op: samen leren, samen spelen.</p>
         <div class="hero-cta">
           <a class="btn btn--primary" href="aanmelden.html">
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
@@ -87,10 +88,23 @@
         </div>
       </div>
 
-      <!-- Illustratief paneel: logo + verbindingsmotief -->
+      <!-- Sfeerbeelden-slider -->
       <div class="hero-panel">
-        <div class="scene">
-          <img src="assets/logo-zon.png" alt="Illustratie: twee kinderen — één in een rolstoel — spelen samen. Logo van Zorg en Onderwijs Nu." width="300" height="316">
+        <div class="slider hero-slider" data-slider role="region" aria-label="Sfeerbeelden van ZON">
+          <ul class="slider-track" data-slider-track tabindex="0">
+            <li class="slide"><img src="assets/fotos/hero/therapieruimte.jpg" alt="Sensorische therapieruimte bij ZON" loading="lazy"></li>
+            <li class="slide"><img src="assets/fotos/hero/leeshoek.jpg" alt="Gezellige leeshoek bij ZON" loading="lazy"></li>
+            <li class="slide"><img src="assets/fotos/hero/speelkeuken.jpg" alt="Speelkeuken op een ZON-groep" loading="lazy"></li>
+            <li class="slide"><img src="assets/fotos/hero/leescorner.jpg" alt="Leeshoek met boeken bij ZON" loading="lazy"></li>
+            <li class="slide"><img src="assets/fotos/hero/klaslokaal.jpg" alt="Klaslokaal met aangepast materiaal bij ZON" loading="lazy"></li>
+          </ul>
+          <button type="button" class="slider-nav slider-prev" data-slider-prev aria-label="Vorige foto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="slider-nav slider-next" data-slider-next aria-label="Volgende foto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="slider-dots" data-slider-dots></div>
         </div>
         <div class="badge-float badge-rating">
           <span class="dot">8,9</span>
@@ -106,6 +120,32 @@
     </div>
   </section>
 
+  <!-- ===================== PRAKTISCH ===================== -->
+  <section class="section section--tight">
+    <div class="wrap grid grid-4">
+      <div class="card">
+        <h3>Vacature</h3>
+        <p>Er is op dit moment 1 vacature. Voor andere functies zijn open sollicitaties welkom.</p>
+        <a class="more" href="vacatures.html">Lees verder →</a>
+      </div>
+      <div class="card">
+        <h3>Momenteel is er een wachtlijst</h3>
+        <p>Er zijn op dit moment geen plekken vrij. Bellen voor een rondleiding kan altijd.</p>
+        <a class="more" href="aanmelden.html">Rondleiding aanvragen →</a>
+      </div>
+      <div class="card">
+        <h3>Enquête tevredenheid ouders</h3>
+        <p>De gemiddelde score van de enquête was een 8,9! Daar zijn we trots op.</p>
+        <a class="more" href="nieuws.html">Lees verder →</a>
+      </div>
+      <div class="card">
+        <h3>Folder</h3>
+        <p>Wilt u ZON in het kort doornemen? Bekijk onze folder.</p>
+        <a class="more" href="documenten/folder-zon.pdf" download>Download folder →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Verbindingsdraad (signatuur) -->
   <div class="wrap" aria-hidden="true">
     <svg class="thread" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 20 Q 150 -10 300 20 T 600 20 T 900 20 T 1200 20"/></svg>
@@ -115,7 +155,7 @@
   <section class="section section--tight">
     <div class="wrap">
       <div class="stats">
-        <div class="stat"><div class="num">4</div><div class="lbl">locaties op reguliere scholen</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">locaties op reguliere scholen</div></div>
         <div class="stat"><div class="num">0–13</div><div class="lbl">jaar — ook meervoudig complex</div></div>
         <div class="stat"><div class="num">8,9</div><div class="lbl">waardering van ouders</div></div>
         <div class="stat"><div class="num">10+</div><div class="lbl">jaar ervaring in de regio</div></div>
@@ -222,7 +262,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Onze locaties</span>
-        <h2>Vier plekken in Bergen op Zoom en Halsteren</h2>
+        <h2>Vijf plekken in Bergen op Zoom en Halsteren</h2>
         <p class="lead">Elke groep zit op een reguliere basisschool. Aanmelden kan altijd — een rondleiding regelen we graag.</p>
       </div>
       <div class="grid grid-2">
@@ -232,6 +272,13 @@
             <h3>ZON De Kreek</h3>
             <address>Basisschool De Kreek<br>Hinkelenoord 14, 4617 NC Bergen op Zoom</address>
             <a href="tel:+31643204571">06 43 20 45 71</a>
+            <div class="map-embed" data-map-src="https://www.google.com/maps?q=51.4754476,4.2787030&amp;hl=nl&amp;z=16&amp;output=embed" data-map-title="Kaart: ZON De Kreek">
+              <button type="button" class="map-toggle" data-map-toggle>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Bekijk kaart
+                <span class="hint">Laadt Google Maps na klik</span>
+              </button>
+            </div>
           </div>
         </div>
         <div class="card loc">
@@ -240,6 +287,13 @@
             <h3>ZON Kiemkade</h3>
             <address>Kindcentrum Kiemkade<br>Burgemeester Blomlaan 2, 4624 GA Bergen op Zoom</address>
             <a href="tel:+31638296141">06 38 29 61 41</a>
+            <div class="map-embed" data-map-src="https://www.google.com/maps?q=51.4868624,4.3006076&amp;hl=nl&amp;z=16&amp;output=embed" data-map-title="Kaart: ZON Kiemkade">
+              <button type="button" class="map-toggle" data-map-toggle>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Bekijk kaart
+                <span class="hint">Laadt Google Maps na klik</span>
+              </button>
+            </div>
           </div>
         </div>
         <div class="card loc">
@@ -248,6 +302,13 @@
             <h3>ZON De Rode Schouw</h3>
             <address>Basisschool De Rode Schouw<br>De Rode Schouw 87, 4661 VE Halsteren</address>
             <a href="tel:+31639216642">06 39 21 66 42</a>
+            <div class="map-embed" data-map-src="https://www.google.com/maps?q=51.5255782,4.2808381&amp;hl=nl&amp;z=16&amp;output=embed" data-map-title="Kaart: ZON De Rode Schouw">
+              <button type="button" class="map-toggle" data-map-toggle>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Bekijk kaart
+                <span class="hint">Laadt Google Maps na klik</span>
+              </button>
+            </div>
           </div>
         </div>
         <div class="card loc">
@@ -256,6 +317,28 @@
             <h3>ZON De Krabbenkooi</h3>
             <address>Basisschool De Krabbenkooi<br>Coehoornstraat 28, 4611 KS Bergen op Zoom</address>
             <a href="tel:+31657689466">06 57 68 94 66</a>
+            <div class="map-embed" data-map-src="https://www.google.com/maps?q=51.4912122,4.2856322&amp;hl=nl&amp;z=16&amp;output=embed" data-map-title="Kaart: ZON De Krabbenkooi">
+              <button type="button" class="map-toggle" data-map-toggle>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Bekijk kaart
+                <span class="hint">Laadt Google Maps na klik</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card loc">
+          <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div>
+            <h3>ZON De Beemdkroon</h3>
+            <address>Woonzorgcomplex De Beemdkroon<br>Beemdkroon 52a t/m f, 4616 AR Bergen op Zoom</address>
+            <span class="hint">Telefoonnummer volgt</span>
+            <div class="map-embed" data-map-src="https://www.google.com/maps?q=De+Beemdkroon+52,4616+AR+Bergen+op+Zoom&amp;hl=nl&amp;z=16&amp;output=embed" data-map-title="Kaart: ZON De Beemdkroon">
+              <button type="button" class="map-toggle" data-map-toggle>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Bekijk kaart
+                <span class="hint">Laadt Google Maps na klik</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -291,9 +374,9 @@
         <article class="card news-card card--lift">
           <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 8v4l3 2"/></svg></div>
           <div class="body">
-            <time datetime="2023-01-01">Tevredenheidsenquête</time>
+            <time datetime="2021-03-21">21 maart 2021</time>
             <h3>Ouders geven ZON gemiddeld een 8,9</h3>
-            <p>We gaan met zijn allen voor de ontwikkeling van de kinderen — en dat wordt gezien. Sfeer en uitstraling scoren hoog.</p>
+            <p>Resultaten van het klanttevredenheidsonderzoek 2020/2021: sfeer en uitstraling scoren hoog. Daar zijn we trots op.</p>
             <a class="more" href="nieuws.html">Lees verder →</a>
           </div>
         </article>
@@ -327,7 +410,9 @@
         <img src="assets/logo-zon.png" alt="Logo Zorg en Onderwijs Nu" width="74" height="74">
         <p>Ontwikkelingsgerichte dagopvang en zorg voor kinderen met een complexe zorgvraag, midden op een gewone basisschool.</p>
         <div class="partners">
-          <span>NSGK</span><span>HandicapNL</span><span>BVKZ</span>
+          <img src="assets/logos/nsgk.png" alt="NSGK" height="28">
+          <img src="assets/logos/handicapnl.png" alt="HandicapNL" height="28">
+          <img src="assets/logos/bvkz.jpg" alt="BVKZ" height="28">
         </div>
       </div>
       <div>
@@ -336,6 +421,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="wie-zijn-wij.html">Wie zijn wij?</a></li>
           <li><a href="nieuws.html">Nieuws</a></li>
+          <li><a href="vacatures.html">Vacatures</a></li>
           <li><a href="aanmelden.html">Aanmelden</a></li>
           <li><a href="anbi.html">ANBI</a></li>
           <li><a href="vrienden.html">Vrienden van ZON</a></li>
@@ -349,6 +435,7 @@
           <li>ZON Kiemkade</li>
           <li>ZON De Rode Schouw</li>
           <li>ZON De Krabbenkooi</li>
+          <li>ZON De Beemdkroon</li>
         </ul>
       </div>
       <div>
@@ -377,5 +464,7 @@
 </footer>
 
 <script src="assets/nav.js"></script>
+<script src="assets/maps.js"></script>
+<script src="assets/slider.js"></script>
 </body>
 </html>
