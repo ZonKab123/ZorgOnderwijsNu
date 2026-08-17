@@ -11,6 +11,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#1F5FA6">
+  <script src="assets/theme-init.js"></script>
 
   <title>Zorg en Onderwijs Nu — ieder kind hoort erbij</title>
   <meta name="description" content="Stichting Zorg en Onderwijs Nu (ZON) biedt ontwikkelingsgerichte dagopvang en zorg voor kinderen (0–13 jaar) met een complexe zorgvraag, midden op reguliere basisscholen in Bergen op Zoom en Halsteren.">
@@ -19,7 +20,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -38,10 +39,10 @@
     </button>
 
     <ul class="menu" id="hoofdmenu" data-open="false">
-      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="index.html" aria-current="page"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><span class="nav-txt">Home</span></a></li>
       <li class="has-sub" data-open="false">
-        <button aria-expanded="false">Wie zijn wij?
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        <button aria-expanded="false"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5M15.5 20c0-2 1-3.3 3-3.3"/></svg></span><span class="nav-txt">Wie zijn wij?</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <ul class="submenu">
           <li><a href="wie-zijn-wij.html">Overzicht</a></li>
@@ -50,11 +51,11 @@
           <li><a href="wie-zijn-wij.html#medewerkers">Medewerkers</a></li>
         </ul>
       </li>
-      <li><a href="nieuws.html">Nieuws</a></li>
-      <li><a href="vacatures.html">Vacatures</a></li>
-      <li><a href="anbi.html">ANBI</a></li>
-      <li><a href="vrienden.html">Vrienden van ZON</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="nieuws.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 17h4"/></svg></span><span class="nav-txt">Nieuws</span></a></li>
+      <li><a href="vacatures.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><span class="nav-txt">Vacatures</span></a></li>
+      <li><a href="anbi.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h12a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2z"/><path d="M9 8h6M9 11h6"/></svg></span><span class="nav-txt">ANBI</span></a></li>
+      <li><a href="vrienden.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4-6-9a3 3 0 0 1 6-1 3 3 0 0 1 6 1c0 5-6 9-6 9z"/></svg></span><span class="nav-txt">Vrienden van ZON</span></a></li>
+      <li><a href="contact.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg></span><span class="nav-txt">Contact</span></a></li>
       <li class="cta-item"><a href="aanmelden.html">Rondleiding&nbsp;aanvragen</a></li>
     </ul>
   </div>
@@ -66,9 +67,11 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <span class="eyebrow">Welkom bij Zorg en Onderwijs Nu</span>
-        <h1>Ieder kind <span class="hl">hoort erbij</span></h1>
-        <p class="lead">ZON biedt dagopvang voor kinderen met een complexe zorgvraag aan — midden op een gewone basisschool. Zo groeien kinderen mét en zónder beperking samen op: samen leren, samen spelen.</p>
+        <span class="eyebrow modern-only">Welkom bij Zorg en Onderwijs Nu</span>
+        <h1 class="modern-only">Ieder kind <span class="hl">hoort erbij</span></h1>
+        <p class="lead modern-only">ZON biedt dagopvang voor kinderen met een complexe zorgvraag aan — midden op een gewone basisschool. Zo groeien kinderen mét en zónder beperking samen op: samen leren, samen spelen.</p>
+        <h1 class="classic-only">Welkom bij Zorg en Onderwijs Nu</h1>
+        <p class="lead classic-only">ZON biedt dagopvang voor kinderen met een complexe zorgvraag aan.</p>
         <div class="hero-cta">
           <a class="btn btn--primary" href="aanmelden.html">
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
@@ -120,8 +123,34 @@
     </div>
   </section>
 
+  <!-- ===================== KLASSIEK: cirkel-iconen (ANBI/Doelgroep/Locaties/Folder) ===================== -->
+  <section class="section section--tight classic-only">
+    <div class="wrap circ-grid">
+      <div class="circ">
+        <div class="circ-ic circ-ic--sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="1.5"/><path d="M9 7V5h6v2"/></svg></div>
+        <h3>ANBI</h3>
+        <p>Wij zijn een Algemeen Nut Beogende Instelling (ANBI) en als zodanig door de Nederlandse Belastingdienst aangemerkt.</p>
+      </div>
+      <div class="circ">
+        <div class="circ-ic circ-ic--brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="13" width="6" height="6" rx="1"/><circle cx="14" cy="9" r="3"/><path d="M17 19h3v-4"/></svg></div>
+        <h3>Doelgroep</h3>
+        <p>(Meervoudig) gehandicapte kinderen zijn van harte welkom (0–13 jaar).</p>
+      </div>
+      <div class="circ">
+        <div class="circ-ic circ-ic--sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <h3>Locaties</h3>
+        <p>De Kreek, Kiemkade, De Rode Schouw en De Krabbenkooi in Bergen op Zoom, en De Rode Schouw in Halsteren.</p>
+      </div>
+      <div class="circ">
+        <div class="circ-ic circ-ic--brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div>
+        <h3>Folder</h3>
+        <p>Wilt u ZON in het kort doornemen? <a href="documenten/folder-zon.pdf">Klik hier voor onze folder.</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PRAKTISCH ===================== -->
-  <section class="section section--tight">
+  <section class="section section--tight modern-only">
     <div class="wrap grid grid-4">
       <div class="card">
         <h3>Vacature</h3>
@@ -147,18 +176,39 @@
   </section>
 
   <!-- Verbindingsdraad (signatuur) -->
-  <div class="wrap" aria-hidden="true">
+  <div class="wrap modern-only" aria-hidden="true">
     <svg class="thread" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 20 Q 150 -10 300 20 T 600 20 T 900 20 T 1200 20"/></svg>
   </div>
 
   <!-- ===================== STATS ===================== -->
-  <section class="section section--tight">
+  <section class="section section--tight modern-only">
     <div class="wrap">
       <div class="stats">
         <div class="stat"><div class="num">5</div><div class="lbl">locaties op reguliere scholen</div></div>
         <div class="stat"><div class="num">0–13</div><div class="lbl">jaar — ook meervoudig complex</div></div>
         <div class="stat"><div class="num">8,9</div><div class="lbl">waardering van ouders</div></div>
         <div class="stat"><div class="num">10+</div><div class="lbl">jaar ervaring in de regio</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KLASSIEK: statistiek-cirkels ===================== -->
+  <section class="stats-ring classic-only">
+    <div class="wrap">
+      <div class="stat">
+        <div class="stat-ring-num">8,9</div>
+        <h3>Enquête tevredenheid ouders</h3>
+        <p>We gaan met zijn allen voor ontwikkeling van de kinderen — de gemiddelde score van de enquête was een 8,9!</p>
+      </div>
+      <div class="stat">
+        <div class="stat-ring-num">1</div>
+        <h3>Vacature</h3>
+        <p>Er is op dit moment 1 vacature. Voor andere functies zijn open sollicitaties welkom.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-ring-num">!</div>
+        <h3>Momenteel is er een wachtlijst</h3>
+        <p>Er zijn op dit moment geen plekken vrij. U kunt wel altijd bellen voor een rondleiding.</p>
       </div>
     </div>
   </section>
@@ -257,6 +307,20 @@
     </div>
   </section>
 
+  <!-- ===================== INTRODUCTIEFILMPJE ===================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <span class="eyebrow">Maak kennis met ZON</span>
+        <h2>Introductiefilmpje: Stichting Zorg en Onderwijs Nu!</h2>
+        <p>Een school die leert dat niemand wordt buitengesloten, bereidt voor op een samenleving waarin iedereen meetelt!</p>
+        <div class="hero-cta">
+          <a class="btn btn--light" href="https://www.youtube.com/watch?v=WAyRrgcx6dA" target="_blank" rel="noopener noreferrer">Zie filmpje ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== LOCATIES ===================== -->
   <section class="section" id="locaties">
     <div class="wrap">
@@ -267,6 +331,7 @@
       </div>
       <div class="grid grid-2">
         <div class="card loc">
+          <div class="loc-photo"><img src="assets/fotos/locaties/de-kreek.jpg" alt="Gevel van ZON De Kreek" loading="lazy"></div>
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <div>
             <h3>ZON De Kreek</h3>
@@ -282,6 +347,7 @@
           </div>
         </div>
         <div class="card loc">
+          <div class="loc-photo"><img src="assets/fotos/locaties/kiemkade.jpg" alt="Gevel van ZON Kiemkade" loading="lazy"></div>
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <div>
             <h3>ZON Kiemkade</h3>
@@ -297,6 +363,7 @@
           </div>
         </div>
         <div class="card loc">
+          <div class="loc-photo"><img src="assets/fotos/locaties/rodeschouw.jpg" alt="Gevel van ZON De Rode Schouw" loading="lazy"></div>
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <div>
             <h3>ZON De Rode Schouw</h3>
@@ -416,7 +483,7 @@
         </div>
       </div>
       <div>
-        <h4>Menu</h4>
+        <h4>Menu</h4><span class="foot-divider" aria-hidden="true"></span>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="wie-zijn-wij.html">Wie zijn wij?</a></li>
@@ -429,7 +496,7 @@
         </ul>
       </div>
       <div>
-        <h4>Vestigingen</h4>
+        <h4>Vestigingen</h4><span class="foot-divider" aria-hidden="true"></span>
         <ul>
           <li>ZON De Kreek</li>
           <li>ZON Kiemkade</li>
@@ -439,7 +506,7 @@
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4>Contact</h4><span class="foot-divider" aria-hidden="true"></span>
         <address>
           Postadres: Hinkelenoord 14<br>
           4617 NC Bergen op Zoom<br>
@@ -463,7 +530,13 @@
   </div>
 </footer>
 
+<button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
+  <span class="theme-toggle-icon" aria-hidden="true">&#127912;</span>
+  <span class="theme-toggle-label">Klassieke look</span>
+</button>
+
 <script src="assets/nav.js"></script>
+<script src="assets/theme-toggle.js"></script>
 <script src="assets/maps.js"></script>
 <script src="assets/slider.js"></script>
 </body>

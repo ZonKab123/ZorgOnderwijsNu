@@ -170,8 +170,8 @@ strong { font-weight: 600; }
   border-radius: var(--pill); display: inline-flex; align-items: center; gap: .35rem;
 }
 .has-sub > button:hover, .has-sub[data-open="true"] > button { background: var(--wash-blue); color: var(--brand-deep); }
-.has-sub > button svg { width: 14px; height: 14px; transition: transform .2s ease; }
-.has-sub[data-open="true"] > button svg { transform: rotate(180deg); }
+.has-sub > button > svg.chev { width: 14px; height: 14px; transition: transform .2s ease; }
+.has-sub[data-open="true"] > button > svg.chev { transform: rotate(180deg); }
 .submenu {
   position: absolute; top: calc(100% + 6px); left: 0; min-width: 220px;
   background: #fff; border: 1px solid var(--line); border-radius: var(--r-md);
@@ -287,6 +287,9 @@ strong { font-weight: 600; }
 .quote--leaf { border-left-color: var(--leaf); }
 
 /* ---------- Locaties ---------- */
+.loc-photo { border-radius: var(--r-lg) var(--r-lg) 0 0; overflow: hidden; margin: -1.5rem -1.5rem 1.2rem; aspect-ratio: 16 / 9; }
+.loc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.loc-photo--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 .loc { display: flex; gap: 1rem; align-items: flex-start; }
 .loc .pin { width: 46px; height: 46px; border-radius: 14px; background: var(--wash-blue); color: var(--brand); display: grid; place-items: center; flex: none; }
 .loc .pin svg { width: 24px; height: 24px; }
@@ -318,6 +321,25 @@ strong { font-weight: 600; }
 .news-card h3 { font-size: 1.15rem; margin: .3rem 0 .5rem; }
 .news-card p { color: var(--muted); font-size: .95rem; flex: 1; }
 .news-card .more { font-family: var(--display); font-weight: 600; color: var(--brand); text-decoration: none; margin-top: .6rem; }
+
+/* ---------- Nieuwsarchief (volledige berichtenstroom) ---------- */
+.news-stream { display: grid; gap: 1.6rem; }
+.news-post {
+  display: grid; grid-template-columns: 220px 1fr; gap: 1.5rem;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 1.4rem; box-shadow: var(--shadow-sm);
+}
+.news-post:not(:has(.news-post-media)) { grid-template-columns: 1fr; }
+.news-post-media img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-md); aspect-ratio: 4 / 3; display: block; }
+.news-post-body time { font-size: .82rem; color: var(--coral-ink); font-weight: 600; letter-spacing: .02em; }
+.news-post-cat { margin-left: .7rem; font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.news-post-body h3 { margin: .35rem 0 .6rem; font-size: 1.22rem; }
+.news-post-body p { color: var(--ink); font-size: .96rem; }
+.news-post-inline-img { max-width: 320px; width: 100%; border-radius: var(--r-md); margin: .6rem 0; display: block; }
+@media (max-width: 640px) {
+  .news-post { grid-template-columns: 1fr; }
+  .news-post-media img { aspect-ratio: 16 / 10; }
+}
 
 /* ---------- CTA band ---------- */
 .cta-band { background: var(--brand-deep); color: #fff; border-radius: var(--r-lg); padding: clamp(2rem, 5vw, 3.5rem); text-align: center; position: relative; overflow: hidden; }
@@ -381,6 +403,15 @@ strong { font-weight: 600; }
 /* ---------- Page hero (subpagina's) ---------- */
 .page-hero { background: linear-gradient(165deg, var(--wash-blue), var(--wash-cool)); border-bottom: 1px solid var(--line); }
 .page-hero .wrap { padding-block: clamp(2.2rem, 5vw, 3.6rem); }
+.page-hero--photo {
+  background: linear-gradient(180deg, rgba(23,49,63,.55), rgba(23,49,63,.75)), url("fotos/achtergrondtekst.jpg") center/cover;
+  border-bottom: 0;
+}
+.page-hero--photo .eyebrow { color: var(--sun); }
+.page-hero--photo .eyebrow::before { background: #fff; }
+.page-hero--photo h1 { color: #fff; }
+.page-hero--photo .lead { color: #e7edf1; }
+.page-hero--photo .crumbs, .page-hero--photo .crumbs a { color: #cfe0ee; }
 .crumbs { font-size: .88rem; color: var(--muted); margin-bottom: .6rem; }
 .crumbs a { color: var(--muted); text-decoration: none; }
 .crumbs a:hover { color: var(--brand); }
@@ -482,6 +513,10 @@ strong { font-weight: 600; }
 .hero-panel .hero-slider .slider-track { gap: 0; scroll-snap-type: x mandatory; }
 .hero-panel .hero-slider .slide { width: 100%; aspect-ratio: 4 / 3; border-radius: var(--r-md); }
 
+/* Bredere, liggende foto-band bovenaan een subpagina (bv. Vrienden van ZON) */
+.page-photo-slider .slider-track { gap: 0; scroll-snap-type: x mandatory; }
+.page-photo-slider .slide { width: 100%; aspect-ratio: 21 / 9; border-radius: var(--r-lg); }
+
 /* ---------- Responsief ---------- */
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
@@ -510,4 +545,233 @@ strong { font-weight: 600; }
   .footer-grid { grid-template-columns: 1fr; }
   .btn { width: 100%; justify-content: center; }
   .hero-cta { flex-direction: column; }
+}
+
+/* ---------- Thema-wisselknop ---------- */
+.theme-toggle {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 200;
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #fff; color: var(--brand-deep); border: 1px solid var(--line-cool);
+  border-radius: var(--pill); padding: .65rem 1.1rem;
+  font-family: var(--display); font-weight: 600; font-size: .85rem;
+  box-shadow: var(--shadow); cursor: pointer; transition: border-color .15s ease;
+}
+.theme-toggle:hover { border-color: var(--brand); }
+.theme-toggle-icon { font-size: 1rem; line-height: 1; }
+@media (max-width: 560px) {
+  .theme-toggle { right: .7rem; bottom: .7rem; padding: .55rem .8rem; }
+  .theme-toggle-label { display: none; }
+}
+
+/* ============================================================
+   Thema-variant "Klassiek" — kleuren, typografie en vormtaal
+   gebaseerd op de huidige live WordPress-site (zorgonderwijsnu.nl)
+   én op de eerder goedgekeurde POC, zodat dezelfde content in twee
+   stijlen te bekijken is. Grotendeels dezelfde HTML; op een paar
+   plekken (homepage-hero, cirkel-intro, stats) staat aanvullende
+   .classic-only markup naast .modern-only markup, geschakeld via CSS.
+   ============================================================ */
+:root[data-theme="classic"] {
+  --paper:      #FFFFFF;
+  --card:       #FFFFFF;
+  --wash-cool:  #F5F5F5;
+  --wash-warm:  #F5F5F5;
+  --wash-blue:  #F5F5F5;
+
+  --brand:      #3B4EA3;   /* indigo — koppen/links */
+  --brand-deep: #233072;   /* navy-d — donkere achtergronden */
+  --brand-soft: #6F86C9;
+
+  --sun:        #F4DF04;
+  --sun-deep:   #C9BB00;
+  --coral:      #4CAF50;   /* groen — knoppen */
+  --coral-ink:  #3F9E43;
+  --leaf:       #4CAF50;
+  --leaf-deep:  #3F9E43;
+
+  --ink:        #666666;
+  --muted:      #707070;
+  --line:       #E7E7E7;
+  --line-cool:  #DADADA;
+
+  --navy:       #2B3A87;   /* veelhoek-banden (hero, banners, footer-top) */
+  --navy-deep:  #233072;
+  --orange:     #EF7D1A;   /* decoratief accent (dividers, meta) */
+
+  --display: "Lato", system-ui, sans-serif;
+  --body: "Open Sans", system-ui, -apple-system, sans-serif;
+
+  --r-lg: 4px;
+  --r-md: 4px;
+  --r-sm: 3px;
+  --pill: 3px;
+  --shadow: 0 1px 6px rgba(0,0,0,.08);
+  --shadow-sm: 0 1px 6px rgba(0,0,0,.06);
+}
+
+.classic-only { display: none; }
+[data-theme="classic"] .classic-only { display: block; }
+[data-theme="classic"] .modern-only { display: none; }
+
+[data-theme="classic"] h1,
+[data-theme="classic"] h2,
+[data-theme="classic"] h4 {
+  font-weight: 300;
+}
+[data-theme="classic"] h3 { font-weight: 400; }
+
+[data-theme="classic"] .eyebrow::before {
+  border-radius: 0;
+  background: var(--orange);
+}
+[data-theme="classic"] .eyebrow {
+  color: var(--brand);
+}
+
+[data-theme="classic"] .i-blue,
+[data-theme="classic"] .i-coral,
+[data-theme="classic"] .i-leaf,
+[data-theme="classic"] .i-sun {
+  background: var(--wash-blue);
+  color: var(--brand);
+}
+
+/* ---------- Header / navigatie (klassiek) ---------- */
+[data-theme="classic"] .site-header {
+  background: #fff;
+  backdrop-filter: none;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+[data-theme="classic"] .brand img { width: 96px; height: 96px; }
+[data-theme="classic"] .nav { min-height: 108px; }
+.nav-ico { display: none; }
+[data-theme="classic"] .nav-ico {
+  display: inline-flex; width: 24px; height: 24px; margin: 0 auto;
+}
+[data-theme="classic"] .nav-ico svg { width: 100%; height: 100%; stroke: var(--brand); fill: none; stroke-width: 1.7; }
+[data-theme="classic"] .menu a,
+[data-theme="classic"] .has-sub > button {
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: .3rem; min-width: 76px; padding: 14px 10px; font-size: .82rem; text-align: center;
+}
+[data-theme="classic"] .menu a[aria-current="page"],
+[data-theme="classic"] .has-sub[data-open="true"] > button {
+  background: var(--coral-ink); color: #fff; position: relative;
+}
+[data-theme="classic"] .menu a[aria-current="page"] .nav-ico svg,
+[data-theme="classic"] .has-sub[data-open="true"] > button .nav-ico svg { stroke: #fff; }
+[data-theme="classic"] .menu a[aria-current="page"]::after {
+  content: ""; position: absolute; left: 50%; bottom: -9px; transform: translateX(-50%);
+  border: 9px solid transparent; border-top-color: var(--coral-ink); border-bottom: 0;
+}
+[data-theme="classic"] .menu .cta-item a { flex-direction: row; gap: .5rem; }
+[data-theme="classic"] .menu .cta-item a:hover { background: var(--coral-ink); filter: brightness(.92); }
+@media (max-width: 780px) {
+  [data-theme="classic"] .menu a,
+  [data-theme="classic"] .has-sub > button {
+    flex-direction: row; justify-content: flex-start; text-align: left; min-width: 0; padding: .6rem .8rem;
+  }
+  [data-theme="classic"] .menu a[aria-current="page"]::after { display: none; }
+  [data-theme="classic"] .nav-ico { margin: 0; }
+}
+
+/* ---------- Veelhoek-band (page-hero, homepage-caption, cta-band) ---------- */
+[data-theme="classic"] .page-hero {
+  background: var(--navy) url("patterns/blue-pattern-1.png");
+  background-size: 160px;
+  border-bottom: 0;
+}
+[data-theme="classic"] .page-hero--photo {
+  background: linear-gradient(rgba(43,58,135,.68), rgba(43,58,135,.68)), url("fotos/achtergrondtekst.jpg") center/cover;
+}
+[data-theme="classic"] .page-hero .crumbs,
+[data-theme="classic"] .page-hero .crumbs a { color: #cfd6ee; }
+[data-theme="classic"] .page-hero .eyebrow { color: var(--sun); }
+[data-theme="classic"] .page-hero h1 { color: #fff; }
+[data-theme="classic"] .page-hero .lead { color: #dfe3f2; }
+
+[data-theme="classic"] .cta-band {
+  background: var(--navy) url("patterns/blue-pattern-1.png");
+  background-size: 160px;
+  border-radius: var(--r-lg);
+}
+[data-theme="classic"] .cta-band::before,
+[data-theme="classic"] .cta-band::after { display: none; }
+[data-theme="classic"] .cta-band .eyebrow { color: var(--sun); }
+
+/* ---------- Homepage hero (klassiek): foto-slider + veelhoek-onderschrift ---------- */
+[data-theme="classic"] .hero { padding-block: 0; }
+[data-theme="classic"] .hero .wrap { grid-template-columns: 1fr; gap: 0; padding-inline: 0; max-width: 100%; }
+[data-theme="classic"] .hero-panel { order: -1; border: 0; border-radius: 0; box-shadow: none; padding: 0; max-width: none; }
+[data-theme="classic"] .hero-panel .scene { display: none; }
+[data-theme="classic"] .badge-float { display: none; }
+[data-theme="classic"] .hero-slider .slide { border-radius: 0; aspect-ratio: 16 / 7; }
+[data-theme="classic"] .hero-copy {
+  background: var(--navy) url("patterns/blue-pattern-1.png");
+  background-size: 160px;
+  padding: 34px clamp(1.1rem, 4vw, 2rem);
+}
+[data-theme="classic"] .hero-copy h1 { color: #fff; font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+[data-theme="classic"] .hero-copy .eyebrow { color: var(--sun); }
+[data-theme="classic"] .hero-copy h1 .hl { color: var(--sun); }
+[data-theme="classic"] .hero-copy h1 .hl::after { display: none; }
+[data-theme="classic"] .hero-copy .lead { color: #dfe3f2; }
+[data-theme="classic"] .hero-trust .item { color: #cfd6ee; }
+[data-theme="classic"] .hero-trust .item b { color: #fff; }
+[data-theme="classic"] .hero-trust svg { color: var(--sun); }
+
+/* ---------- Cirkel-iconen (klassiek, homepage) ---------- */
+.circ-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.circ .circ-ic {
+  width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 16px;
+  display: grid; place-items: center;
+}
+.circ-ic--sun { background: var(--sun); }
+.circ-ic--brand { background: var(--brand); }
+.circ-ic svg { width: 44px; height: 44px; stroke: #fff; fill: none; stroke-width: 1.6; }
+.circ-ic--sun svg { stroke: var(--brand-deep, var(--navy)); }
+.circ h3 { color: var(--brand); font-size: 1.3rem; margin-bottom: .4rem; }
+.circ p { color: var(--ink); font-size: .95rem; margin: 0; }
+@media (max-width: 900px) { .circ-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .circ-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Statistiek-cirkels (klassiek, homepage) ---------- */
+.stats-ring {
+  position: relative; color: #fff;
+  background: linear-gradient(rgba(35,48,114,.72), rgba(35,48,114,.72)), var(--navy) url("patterns/blue-pattern-1.png");
+  background-size: cover, 160px;
+}
+.stats-ring .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-block: clamp(2.5rem, 6vw, 4rem); text-align: center; }
+.stat-ring-num {
+  width: 130px; height: 130px; border-radius: 50%; border: 3px solid #fff;
+  display: grid; place-items: center; margin: 0 auto 16px; font-family: var(--display);
+  font-size: 2.3rem; font-weight: 300;
+}
+.stats-ring h3 { color: #fff; font-size: 1.2rem; margin-bottom: .3rem; }
+.stats-ring p { color: #e7e7ee; font-size: .92rem; margin: 0; }
+@media (max-width: 780px) { .stats-ring .wrap { grid-template-columns: 1fr; } }
+
+/* ---------- Tab-achtige accordion (klassiek, "wie zijn wij") ---------- */
+[data-theme="classic"] .detail-panel { border: 1px solid var(--line); border-radius: var(--r-sm); }
+[data-theme="classic"] .detail-panel summary { color: var(--brand); }
+[data-theme="classic"] .detail-panel[open] summary {
+  background: var(--coral-ink); color: #fff; border-radius: var(--r-sm) var(--r-sm) 0 0;
+}
+[data-theme="classic"] .detail-panel[open] summary::after {
+  border-color: transparent transparent #fff #fff;
+}
+
+/* ---------- Footer (klassiek): oranje divider + ronde badge ---------- */
+[data-theme="classic"] .site-footer {
+  background: var(--navy) url("patterns/blue-pattern-1.png");
+  background-size: 160px;
+}
+[data-theme="classic"] .footer-grid h4 { font-weight: 400; font-size: 1.25rem; margin-bottom: 0; }
+.foot-divider { display: none; }
+[data-theme="classic"] .foot-divider { display: block; width: 42px; height: 3px; background: var(--orange); margin: 8px 0 16px; }
+.sns-badge { display: none; }
+[data-theme="classic"] .sns-badge {
+  display: grid; place-items: center; width: 88px; height: 88px; border-radius: 50%;
+  background: #fff; color: #1f6b2e; font-family: var(--display); font-weight: 700;
+  font-size: .58rem; text-align: center; line-height: 1.15; padding: 8px; margin-top: .8rem;
 }

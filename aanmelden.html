@@ -8,12 +8,13 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#1F5FA6">
+  <script src="assets/theme-init.js"></script>
   <title>Aanmelden &amp; rondleiding — Zorg en Onderwijs Nu</title>
   <meta name="description" content="Vraag vrijblijvend een rondleiding aan bij ZON. Zo werkt aanmelden en financiering voor dagopvang van kinderen met een complexe zorgvraag.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -28,10 +29,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <ul class="menu" id="hoofdmenu" data-open="false">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><span class="nav-txt">Home</span></a></li>
       <li class="has-sub" data-open="false">
-        <button aria-expanded="false">Wie zijn wij?
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        <button aria-expanded="false"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5M15.5 20c0-2 1-3.3 3-3.3"/></svg></span><span class="nav-txt">Wie zijn wij?</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <ul class="submenu">
           <li><a href="wie-zijn-wij.html">Overzicht</a></li>
@@ -40,18 +41,18 @@
           <li><a href="wie-zijn-wij.html#medewerkers">Medewerkers</a></li>
         </ul>
       </li>
-      <li><a href="nieuws.html">Nieuws</a></li>
-      <li><a href="vacatures.html">Vacatures</a></li>
-      <li><a href="anbi.html">ANBI</a></li>
-      <li><a href="vrienden.html">Vrienden van ZON</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="nieuws.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 17h4"/></svg></span><span class="nav-txt">Nieuws</span></a></li>
+      <li><a href="vacatures.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><span class="nav-txt">Vacatures</span></a></li>
+      <li><a href="anbi.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h12a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2z"/><path d="M9 8h6M9 11h6"/></svg></span><span class="nav-txt">ANBI</span></a></li>
+      <li><a href="vrienden.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4-6-9a3 3 0 0 1 6-1 3 3 0 0 1 6 1c0 5-6 9-6 9z"/></svg></span><span class="nav-txt">Vrienden van ZON</span></a></li>
+      <li><a href="contact.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg></span><span class="nav-txt">Contact</span></a></li>
       <li class="cta-item"><a href="aanmelden.html" aria-current="page">Rondleiding&nbsp;aanvragen</a></li>
     </ul>
   </div>
 </header>
 <main id="main">
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--photo">
     <div class="wrap">
       <p class="crumbs"><a href="index.html">Home</a> › Aanmelden &amp; rondleiding</p>
       <span class="eyebrow">Aanmelden</span>
@@ -132,10 +133,10 @@
       <div class="foot-brand">
         <img src="assets/logo-zon.png" alt="Logo Zorg en Onderwijs Nu" width="74" height="74">
         <p>Ontwikkelingsgerichte dagopvang en zorg voor kinderen met een complexe zorgvraag, midden op een gewone basisschool.</p>
-        <div class="partners"><img src="assets/logos/nsgk.png" alt="NSGK" height="28"><img src="assets/logos/handicapnl.png" alt="HandicapNL" height="28"><img src="assets/logos/bvkz.jpg" alt="BVKZ" height="28"></div>
+        <div class="partners"><img src="assets/logos/nsgk.png" alt="NSGK" height="28"><img src="assets/logos/handicapnl.png" alt="HandicapNL" height="28"><img src="assets/logos/bvkz.jpg" alt="BVKZ" height="28"></div><span class="sns-badge" aria-hidden="true">Samen naar School</span>
       </div>
       <div>
-        <h4>Menu</h4>
+        <h4>Menu</h4><span class="foot-divider" aria-hidden="true"></span>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="wie-zijn-wij.html">Wie zijn wij?</a></li>
@@ -148,11 +149,11 @@
         </ul>
       </div>
       <div>
-        <h4>Vestigingen</h4>
+        <h4>Vestigingen</h4><span class="foot-divider" aria-hidden="true"></span>
         <ul><li>ZON De Kreek</li><li>ZON Kiemkade</li><li>ZON De Rode Schouw</li><li>ZON De Krabbenkooi</li><li>ZON De Beemdkroon</li></ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4>Contact</h4><span class="foot-divider" aria-hidden="true"></span>
         <address>Postadres: Hinkelenoord 14<br>4617 NC Bergen op Zoom<br><a href="mailto:info@zorgonderwijsnu.nl">info@zorgonderwijsnu.nl</a><br><a href="tel:+31643204571">06 43 20 45 71</a></address>
         <div class="socials">
           <a href="https://nl.linkedin.com/company/zorg-en-onderwijs-nu" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opent in nieuw tabblad)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.5h3V21h-3V8.5zM9 8.5h2.9v1.7h.04c.4-.76 1.4-1.56 2.9-1.56 3.1 0 3.67 2 3.67 4.7V21h-3v-5.5c0-1.3-.02-3-1.85-3-1.85 0-2.13 1.44-2.13 2.9V21H9V8.5z"/></svg></a>
@@ -166,7 +167,13 @@
     </div>
   </div>
 </footer>
+
+<button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
+  <span class="theme-toggle-icon" aria-hidden="true">&#127912;</span>
+  <span class="theme-toggle-label">Klassieke look</span>
+</button>
 <script src="assets/nav.js"></script>
+<script src="assets/theme-toggle.js"></script>
 <script src="assets/form.js"></script>
 </body>
 </html>
