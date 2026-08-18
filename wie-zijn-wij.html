@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; frame-src https://www.google.com https://maps.google.com; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; upgrade-insecure-requests">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; frame-src https://www.google.com https://maps.google.com https://www.facebook.com; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; upgrade-insecure-requests">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light">
@@ -45,12 +45,12 @@
           <li><a href="wie-zijn-wij.html#medewerkers">Medewerkers</a></li>
         </ul>
       </li>
+      <li><a href="onderwijs.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-1.8-1.3-4.3-2-7-2v13c2.7 0 5.2.7 7 2 1.8-1.3 4.3-2 7-2V4c-2.7 0-5.2.7-7 2z"/><path d="M12 6v13"/></svg></span><span class="nav-txt">Onderwijs</span></a></li>
       <li><a href="nieuws.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 17h4"/></svg></span><span class="nav-txt">Nieuws</span></a></li>
       <li><a href="vacatures.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><span class="nav-txt">Vacatures</span></a></li>
       <li><a href="anbi.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h12a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2z"/><path d="M9 8h6M9 11h6"/></svg></span><span class="nav-txt">ANBI</span></a></li>
-      <li><a href="vrienden.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4-6-9a3 3 0 0 1 6-1 3 3 0 0 1 6 1c0 5-6 9-6 9z"/></svg></span><span class="nav-txt">Vrienden van ZON</span></a></li>
-      <li><a href="contact.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg></span><span class="nav-txt">Contact</span></a></li>
-      <li class="cta-item"><a href="aanmelden.html">Rondleiding&nbsp;aanvragen</a></li>
+      <li><a href="aanmelden.html"><span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 12l2 2 4-4"/></svg></span><span class="nav-txt">Aanmelden</span></a></li>
+      <li class="cta-item"><a href="aanmelden.html">Rondleiding</a></li>
     </ul>
   </div>
 </header>
@@ -103,16 +103,43 @@
       <div class="grid grid-2 align-start">
         <div class="card">
           <div class="loc-photo loc-photo--pair">
-            <img src="assets/fotos/locaties/de-kreek.jpg" alt="Gevel van ZON De Kreek" loading="lazy">
-            <img src="assets/fotos/locaties/rodeschouw.jpg" alt="Gevel van ZON De Rode Schouw" loading="lazy">
+            <div class="slider" data-slider role="region" aria-label="Foto's van ZON De Kreek">
+              <ul class="slider-track" data-slider-track tabindex="0">
+                <li class="slide"><img src="assets/fotos/locaties/kreek-1.jpg" alt="Gevel van ZON De Kreek" loading="lazy"></li>
+                <li class="slide"><img src="assets/fotos/locaties/kreek-2.jpg" alt="Ingang van ZON De Kreek" loading="lazy"></li>
+              </ul>
+              <button type="button" class="slider-nav slider-prev" data-slider-prev aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button type="button" class="slider-nav slider-next" data-slider-next aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+            </div>
+            <div class="slider" data-slider role="region" aria-label="Foto's van ZON De Rode Schouw">
+              <ul class="slider-track" data-slider-track tabindex="0">
+                <li class="slide"><img src="assets/fotos/locaties/rodeschouw-1.jpg" alt="Gevel van ZON De Rode Schouw" loading="lazy"></li>
+                <li class="slide"><img src="assets/fotos/locaties/rodeschouw-2.jpg" alt="Muurschildering bij ZON De Rode Schouw" loading="lazy"></li>
+                <li class="slide"><img src="assets/fotos/locaties/rodeschouw-3.jpg" alt="Ingang van ZON De Rode Schouw" loading="lazy"></li>
+              </ul>
+              <button type="button" class="slider-nav slider-prev" data-slider-prev aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button type="button" class="slider-nav slider-next" data-slider-next aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+            </div>
           </div>
           <h3>De Kreek &amp; De Rode Schouw</h3>
-          <p>Deze ZON-groepen zijn er voor kinderen van 0 tot 13 jaar met een (meervoudige) beperking. Op een groep zitten maximaal 5 kinderen per dagdeel; omdat niet alle kinderen de hele week komen, bestaat een groep uit ongeveer 7 kinderen. Er wordt gewerkt met 4 à 5 medewerkers, waarvan er altijd minimaal 2 op de groep staan. Daarnaast bieden therapeuten behandeling: logopedie, fysiotherapie, ergotherapie en muziek. In overleg met ouders bekijken we waar de hulpvraag van uw kind ligt en welke ondersteuning nodig is.</p>
+          <p>Deze ZON-groepen zijn er voor kinderen van 0 tot en met 18 jaar met een (meervoudige) beperking. Op een groep zitten maximaal 5 kinderen per dagdeel; omdat niet alle kinderen de hele week komen, bestaat een groep uit ongeveer 7 kinderen. Er wordt gewerkt met 4 à 5 medewerkers, waarvan er altijd minimaal 2 op de groep staan. Daarnaast bieden therapeuten behandeling: logopedie, fysiotherapie, ergotherapie en muziek. In overleg met ouders bekijken we waar de hulpvraag van uw kind ligt en welke ondersteuning nodig is.</p>
         </div>
         <div class="card">
-          <div class="loc-photo"><img src="assets/fotos/locaties/kiemkade.jpg" alt="Gevel van ZON Kiemkade" loading="lazy"></div>
+          <div class="loc-photo">
+            <div class="slider" data-slider role="region" aria-label="Foto's van ZON Kiemkade">
+              <ul class="slider-track" data-slider-track tabindex="0">
+                <li class="slide"><img src="assets/fotos/locaties/kiemkade-1.jpg" alt="Gevel van ZON Kiemkade" loading="lazy"></li>
+                <li class="slide"><img src="assets/fotos/locaties/kiemkade-2.jpg" alt="Ingang van ZON Kiemkade" loading="lazy"></li>
+              </ul>
+              <button type="button" class="slider-nav slider-prev" data-slider-prev aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button type="button" class="slider-nav slider-next" data-slider-next aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+            </div>
+          </div>
           <h3>Kiemkade</h3>
-          <p>In februari 2021 startten we hier met een derde groep. ZON groep Kiemkade (voorheen Oost) specialiseert zich in kinderen van 0 tot 13 jaar met autisme of een aanverwante stoornis. We houden over- en onderprikkeling goed in de gaten en bieden hierop passende activiteiten; ook ADL-vaardigheden aanleren of in stand houden komt aan bod. Een vaste dagstructuur, voorspelbaarheid en regelmaat zijn hier erg belangrijk: we werken met een vast team begeleiders en een vaste groep kinderen, maximaal 5 per dag met 2 begeleiders, 1-op-1 aan de werktafel op het niveau van uw kind.</p>
+          <p>In februari 2021 startten we hier met een derde groep. ZON groep Kiemkade specialiseert zich in kinderen van 0 tot en met 18 jaar met autisme of een aanverwante stoornis. We houden over- en onderprikkeling goed in de gaten en bieden hierop passende activiteiten; ook ADL-vaardigheden aanleren of in stand houden komt aan bod. Een vaste dagstructuur, voorspelbaarheid en regelmaat zijn hier erg belangrijk: we werken met een vast team begeleiders en een vaste groep kinderen, maximaal 5 per dag met 2 begeleiders, 1-op-1 aan de werktafel op het niveau van uw kind.</p>
         </div>
       </div>
     </div>
@@ -134,6 +161,10 @@
           <p>Om de ontwikkeling van uw kindje goed op te volgen gebruiken we het volgsysteem IPIO-Z (Integraal Pakket voor Inclusief Onderwijs en Zorg), een methode voor (E)MB-kinderen. Binnen dit volgsysteem wordt gewerkt aan doelen op bijvoorbeeld sensomotoriek, spel, taal en communicatie en/of rekenen — met een duidelijke doorgaande lijn van begeleiding en opvolging.</p>
           <h4>Communicatie</h4>
           <p>In de groepen wordt gewerkt met ondersteunde communicatie: we gebruiken gebaren ter ondersteuning van de taal, pictogrammen voor het visualiseren, en sommige kinderen werken met een spraakcomputer, communicatieboekje of tastbare verwijzers. Ook communicatie met ouders/verzorgers vinden we belangrijk: dagelijks is er een overdracht, elk kind heeft een communicatieschriftje, en twee keer per jaar is er een MDO met alle betrokkenen — naast ouders sluiten daar vaak therapeuten, artsen en thuisondersteuners bij aan. Een persoonlijk gesprek met de begeleiding is altijd mogelijk.</p>
+          <div class="detail-photos">
+            <img src="assets/fotos/activiteiten/gebaren.jpg" alt="Communiceren met gebaren bij ZON" loading="lazy">
+            <img src="assets/fotos/activiteiten/spraakcomputer-2.jpg" alt="Werken met een spraakcomputer bij ZON" loading="lazy">
+          </div>
           <h4>Individuele begeleiding &amp; zorg op maat</h4>
           <p>Uw kind krijgt bij ons individuele ontwikkelingsgerichte begeleiding, individuele doelen, persoonlijke verzorging, zo nodig verpleging en in overleg professionele behandeling. Persoonlijke aandacht is belangrijk voor ons: daarom houden we de groepsgrootte op De Kreek en De Rode Schouw op maximaal vijf kinderen per dagdeel. Binnen Kiemkade werken we met een vaste groep van 5 kinderen, 1-op-1 aan de werktafel, aangepast op het niveau en de belastbaarheid van uw kind.</p>
           <h4>Individueel ontwikkelplan</h4>
@@ -148,11 +179,13 @@
         <div class="detail-body">
           <p>Het alert blijven op de kwaliteit van de zorg die wij leveren is voor ons heel belangrijk — dat doen we vanuit een gezamenlijk belang voor het kind, samen met ouders, medewerkers, professionals, het bestuur en de raad van toezicht, in samenwerking met de scholen in de regio. Graag betrekken we ouders bij het verbeteren en aanscherpen van onze kwaliteit van zorg. Dat organiseren we op verschillende manieren:</p>
           <h4>Jaarlijks klanttevredenheidsonderzoek</h4>
-          <p>We doen dit ieder jaar om goed te begrijpen hoe ouders de zorg van ZON beleven en ervaren. Bekijk hier het <a href="nieuws.html">meest recente resultaat</a>.</p>
+          <p>We doen dit ieder jaar om goed te begrijpen hoe ouders de zorg van ZON beleven en ervaren.</p>
           <h4>Jaarlijkse ouderavond</h4>
           <p>Op deze avond wordt er rondom een thema met elkaar gesproken; daarbij komen soms ook professionals uitleg geven.</p>
           <h4>Branchevereniging Kleinschalige Zorg (BVKZ)</h4>
           <p>Wij zijn aangesloten bij de Branchevereniging Kleinschalige Zorg.</p>
+          <h4>Cliëntenraad</h4>
+          <p>Beslissingen die rondom het proces van de zorg genomen moeten worden, worden aan de ouders in de <a href="#clientenraad">cliëntenraad</a> voorgelegd.</p>
         </div>
       </details>
 
@@ -163,10 +196,10 @@
         </div>
       </details>
 
-      <details class="detail-panel">
+      <details class="detail-panel" id="clientenraad">
         <summary>Cliëntenraad</summary>
         <div class="detail-body">
-          <p>Beslissingen die rondom het proces van de zorg genomen moeten worden, worden aan de ouders in de cliëntenraad voorgelegd. Daarnaast heeft ZON een onbezoldigd <a href="#bestuur">bestuur en raad van toezicht</a>.</p>
+          <p>Beslissingen die rondom het proces van de zorg genomen moeten worden, worden aan de ouders in de cliëntenraad voorgelegd.</p>
         </div>
       </details>
     </div>
@@ -204,8 +237,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Het bestuur</span>
-        <h2>Betrokken en onbezoldigd</h2>
-        <p class="lead">Als ANBI-stichting werkt ons bestuur zonder beloning. Zij bewaken de koers, de kwaliteit en een gezonde, transparante organisatie.</p>
+        <h2>Betrokken en toegewijd</h2>
+        <p class="lead">Ons bestuur bewaakt de koers, de kwaliteit en een gezonde, transparante organisatie.</p>
       </div>
       <h3 class="group-head">Raad van Toezicht</h3>
       <div class="grid grid-3">
@@ -256,7 +289,7 @@
       </div>
       <div class="notice">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <p>Geen enkele bestuurder ontvangt voor zijn of haar inzet een salaris. Zie ons volledige beloningsbeleid op de <a href="anbi.html">ANBI-pagina</a>.</p>
+        <p>Zie ons volledige beloningsbeleid op de <a href="anbi.html">ANBI-pagina</a>.</p>
       </div>
     </div>
   </section>
@@ -335,7 +368,6 @@
         <img class="notice-face" src="assets/fotos/medewerkers/Leonie-gedragsdeskundige.jpg" alt="Leonie Mol" width="48" height="48">
         <p>Bij alle locaties is daarnaast <strong>Leonie Mol</strong> betrokken als gedragsdeskundige.</p>
       </div>
-      <p class="mt-lg"><a class="btn btn--brand" href="contact.html">Werken bij ZON? Neem contact op</a></p>
     </div>
   </section>
 
@@ -357,19 +389,19 @@
     <div class="footer-grid">
       <div class="foot-brand">
         <img src="assets/logo-zon.png" alt="Logo Zorg en Onderwijs Nu" width="74" height="74">
-        <p>Ontwikkelingsgerichte dagopvang en zorg voor kinderen met een complexe zorgvraag, midden op een gewone basisschool.</p>
-        <div class="partners"><img src="assets/logos/nsgk.png" alt="NSGK" height="28"><img src="assets/logos/handicapnl.png" alt="HandicapNL" height="28"><img src="assets/logos/bvkz.jpg" alt="BVKZ" height="28"></div><span class="sns-badge" aria-hidden="true">Samen naar School</span>
+        <p>Ontwikkelingsgerichte dagbesteding en dagbehandeling voor kinderen met een complexe zorgvraag, midden op een gewone basisschool.</p>
+        <div class="partners"><a href="https://www.nsgk.nl/" target="_blank" rel="noopener noreferrer"><img src="assets/logos/nsgk.png" alt="NSGK" height="40"></a><img src="assets/logos/handicapnl.png" alt="HandicapNL" height="40"><img src="assets/logos/bvkz.jpg" alt="BVKZ" height="40"></div><a class="sns-badge" href="https://www.samennaarschool.nl/" target="_blank" rel="noopener noreferrer">Samen naar School</a>
       </div>
       <div>
         <h4>Menu</h4><span class="foot-divider" aria-hidden="true"></span>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="wie-zijn-wij.html">Wie zijn wij?</a></li>
+          <li><a href="onderwijs.html">Onderwijs</a></li>
           <li><a href="nieuws.html">Nieuws</a></li>
           <li><a href="vacatures.html">Vacatures</a></li>
           <li><a href="aanmelden.html">Aanmelden</a></li>
           <li><a href="anbi.html">ANBI</a></li>
-          <li><a href="vrienden.html">Vrienden van ZON</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -379,7 +411,8 @@
       </div>
       <div>
         <h4>Contact</h4><span class="foot-divider" aria-hidden="true"></span>
-        <address>Postadres: Hinkelenoord 14<br>4617 NC Bergen op Zoom<br><a href="mailto:info@zorgonderwijsnu.nl">info@zorgonderwijsnu.nl</a><br><a href="tel:+31643204571">06 43 20 45 71</a></address>
+        <p><a class="btn btn--brand" href="contact.html">Neem contact op</a></p>
+        <address>Postadres: Gemeynte 33<br>4631 MG Hoogerheide<br><a href="mailto:info@zorgonderwijsnu.nl">info@zorgonderwijsnu.nl</a><br><a href="tel:+31638795483">06 38 79 54 83</a></address>
         <div class="socials">
           <a href="https://nl.linkedin.com/company/zorg-en-onderwijs-nu" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opent in nieuw tabblad)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.5h3V21h-3V8.5zM9 8.5h2.9v1.7h.04c.4-.76 1.4-1.56 2.9-1.56 3.1 0 3.67 2 3.67 4.7V21h-3v-5.5c0-1.3-.02-3-1.85-3-1.85 0-2.13 1.44-2.13 2.9V21H9V8.5z"/></svg></a>
           <a href="https://www.facebook.com/zorgenonderwijsnu" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opent in nieuw tabblad)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2C16.6.1 15.6 0 14.5 0 12 0 10.3 1.5 10.3 4.2V6H7.5v3h2.8v9h3.7V9z"/></svg></a>
@@ -393,12 +426,7 @@
   </div>
 </footer>
 
-<button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
-  <span class="theme-toggle-icon" aria-hidden="true">&#127912;</span>
-  <span class="theme-toggle-label">Klassieke look</span>
-</button>
-
 <script src="assets/nav.js"></script>
-<script src="assets/theme-toggle.js"></script>
+<script src="assets/slider.js"></script>
 </body>
 </html>
