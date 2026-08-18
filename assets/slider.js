@@ -82,6 +82,9 @@
       ["mouseenter", "focusin"].forEach(function (ev) {
         root.addEventListener(ev, function () { paused = true; stop(); });
       });
+      ["mouseleave", "focusout"].forEach(function (ev) {
+        root.addEventListener(ev, function () { paused = false; start(); });
+      });
 
       // Only auto-play while the slider is actually visible on screen —
       // besides being wasteful otherwise, this is what avoids fighting
