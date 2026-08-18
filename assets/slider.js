@@ -5,11 +5,14 @@
   "use strict";
   var sliders = document.querySelectorAll("[data-slider]");
 
+  var AUTOPLAY_MS = 4500;
+
   sliders.forEach(function (root) {
     var track = root.querySelector("[data-slider-track]");
     var prevBtn = root.querySelector("[data-slider-prev]");
     var nextBtn = root.querySelector("[data-slider-next]");
     var dotsWrap = root.querySelector("[data-slider-dots]");
+    var progressBar = root.querySelector("[data-slider-progress] .slider-progress-bar");
     if (!track) return;
     var slides = Array.prototype.slice.call(track.children);
     if (!slides.length) return;
@@ -20,7 +23,7 @@
       var b = document.createElement("button");
       b.type = "button";
       b.setAttribute("aria-label", "Ga naar foto " + (i + 1) + " van " + slides.length);
-      b.addEventListener("click", function () { scrollToSlide(i); });
+      b.addEventListener("click", function () { scrollToSlide(i); resetProgress(!!timer); });
       if (dotsWrap) dotsWrap.appendChild(b);
       return b;
     });
@@ -57,26 +60,49 @@
       scrollTimer = setTimeout(updateDots, 100);
     });
 
+    // Voortgangsbalk (alleen aanwezig op de hoofdslider): laat zien dat
+    // en wanneer de slider automatisch doorschuift, en bevriest zichtbaar
+    // op pauze (hover/focus) i.p.v. gewoon te verdwijnen.
+    function freezeProgress() {
+      if (!progressBar) return;
+      var w = getComputedStyle(progressBar).width;
+      progressBar.style.transition = "none";
+      progressBar.style.width = w;
+    }
+    function resetProgress(animate) {
+      if (!progressBar) return;
+      progressBar.style.transition = "none";
+      progressBar.style.width = "0%";
+      if (!animate) return;
+      void progressBar.offsetWidth; // force reflow zodat de transitie opnieuw start
+      progressBar.style.transition = "width " + AUTOPLAY_MS + "ms linear";
+      progressBar.style.width = "100%";
+    }
+
     if (prevBtn) prevBtn.addEventListener("click", function () {
       scrollToSlide(Math.max(0, currentIndex() - 1));
+      resetProgress(!!timer);
     });
     if (nextBtn) nextBtn.addEventListener("click", function () {
       scrollToSlide(Math.min(slides.length - 1, currentIndex() + 1));
+      resetProgress(!!timer);
     });
 
     updateDots();
 
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var timer = null;
     if (!reduceMotion && slides.length > 1) {
-      var timer = null;
       var paused = false;
 
-      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      function stop() { if (timer) { clearInterval(timer); timer = null; freezeProgress(); } }
       function start() {
         if (timer || paused) return;
+        resetProgress(true);
         timer = setInterval(function () {
           scrollToSlide((currentIndex() + 1) % slides.length);
-        }, 4500);
+          resetProgress(true);
+        }, AUTOPLAY_MS);
       }
 
       ["mouseenter", "focusin"].forEach(function (ev) {
