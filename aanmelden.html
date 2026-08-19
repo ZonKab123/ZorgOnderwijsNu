@@ -85,7 +85,8 @@
       <div class="card">
         <h2>Rondleiding aanvragen</h2>
         <p class="form-note">Velden met * zijn verplicht. We gebruiken uw gegevens alleen om contact op te nemen over uw aanvraag.</p>
-        <form class="form" data-zon-form action="/aanvraag" method="post" novalidate>
+        <form class="form" data-zon-form name="rondleiding" data-netlify="true" netlify-honeypot="website" action="/" method="post" novalidate>
+          <input type="hidden" name="form-name" value="rondleiding">
           <div class="row-2">
             <div class="field">
               <label for="naam">Uw naam *</label>
