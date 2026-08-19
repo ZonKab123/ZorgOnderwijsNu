@@ -515,7 +515,7 @@ strong { font-weight: 600; }
 }
 .detail-panel[open] summary::after { transform: rotate(-135deg); }
 .detail-panel .detail-body { padding: 0 1.3rem 1.3rem; color: var(--muted); }
-.detail-panel .detail-body h4 { color: var(--brand-deep); font-family: var(--display); font-size: .98rem; margin: 1rem 0 .3rem; }
+.detail-panel .detail-body h4 { color: var(--brand-deep); font-family: var(--display); font-weight: 800; font-size: 1.05rem; margin: 1.3rem 0 .35rem; }
 .detail-panel .detail-body h4:first-child { margin-top: 0; }
 .notice svg { width: 24px; height: 24px; color: var(--sun-deep); flex: none; margin-top: .1rem; }
 .notice p { margin: 0; font-size: .96rem; }
