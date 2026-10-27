@@ -25,7 +25,7 @@
     iframe.scrolling = "no";
     iframe.frameBorder = "0";
     iframe.setAttribute("allow", "encrypted-media; picture-in-picture; web-share");
-    iframe.title = "Facebook-berichten van Zorg en Onderwijs Nu";
+    iframe.title = "Facebook-berichten van Stichting Zorg en Onderwijs Nu";
 
     placeholder.replaceWith(iframe);
   });
