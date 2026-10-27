@@ -432,14 +432,18 @@ strong { font-weight: 600; }
 .person .role { color: var(--muted); font-size: .92rem; }
 
 .team-card { text-align: left; }
-.team-card .avatar { margin: 0 0 .8rem; }
-.team-list { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .4rem; }
-.team-list li { margin: 0; font-size: .92rem; color: var(--muted); display: flex; align-items: center; gap: .55rem; }
-.team-list li strong { color: var(--ink); }
-.team-list .face { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex: none; background: var(--wash-blue); }
-.notice-face { border-radius: 50%; object-fit: cover; flex: none; }
-.team-note { margin: .6rem 0 0; padding-top: .5rem; border-top: 1px dashed var(--line-cool); font-size: .88rem; color: var(--muted); }
-#medewerkers .notice { margin-top: 1.5rem; }
+.team-stack { grid-template-columns: 1fr; }
+.team-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1.6rem 1.2rem; margin-top: 1.2rem; }
+.team-person { margin: 0; text-align: center; }
+.team-person img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto .6rem; background: var(--wash-blue); }
+.team-person strong { display: block; color: var(--ink); font-size: .98rem; }
+.team-person span { display: block; font-size: .8rem; color: var(--muted); }
+.team-person q { display: block; margin-top: .5rem; font-size: .88rem; line-height: 1.45; color: var(--muted); font-style: italic; quotes: "“" "”"; }
+.team-note { margin: 1.2rem 0 0; padding-top: .5rem; border-top: 1px dashed var(--line-cool); font-size: .88rem; color: var(--muted); }
+@media (max-width: 520px) {
+  .team-wall { grid-template-columns: repeat(2, 1fr); gap: 1.4rem .8rem; }
+  .team-person img { width: 88px; height: 88px; }
+}
 
 /* ---------- Page hero (subpagina's) ---------- */
 .page-hero { background: linear-gradient(165deg, var(--wash-blue), var(--wash-cool)); border-bottom: 1px solid var(--line); }
