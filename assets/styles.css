@@ -71,6 +71,11 @@ h3 { font-size: 1.25rem; }
 p { margin: 0 0 1rem; }
 a { color: var(--brand); text-underline-offset: 3px; }
 a:hover { color: var(--brand-deep); }
+/* Sprongdoelen niet onder de vaste kopregel laten vallen */
+main [id] { scroll-margin-top: 8.5rem; }
+/* Links op donkere banden: kleur van de omringende tekst, wel onderstreept */
+.hero-trust a, .page-hero .lead a { color: inherit; }
+.hero-trust a:hover, .page-hero .lead a:hover { color: #fff; }
 img { max-width: 100%; height: auto; display: block; }
 ul { margin: 0 0 1rem; padding-left: 1.15rem; }
 ol { margin: 0 0 1rem; padding-left: 1.15rem; }
@@ -812,6 +817,16 @@ strong { font-weight: 600; }
 .stats-ring h3 { color: #fff; font-size: 1.2rem; margin-bottom: .3rem; }
 .stats-ring p { color: #e7e7ee; font-size: .92rem; margin: 0; }
 @media (max-width: 780px) { .stats-ring .wrap { grid-template-columns: 1fr; } }
+
+/* Hele cirkel-blok klikbaar (homepage) */
+a.circ, a.stat { display: block; color: inherit; text-decoration: none; border-radius: var(--r-md); }
+a.circ:hover, a.stat:hover { color: inherit; }
+a.circ .circ-ic, a.stat .stat-ring-num { transition: transform .2s ease; }
+a.circ:hover .circ-ic, a.circ:focus-visible .circ-ic,
+a.stat:hover .stat-ring-num, a.stat:focus-visible .stat-ring-num { transform: scale(1.06); }
+a.circ:hover h3, a.circ:focus-visible h3,
+a.stat:hover h3, a.stat:focus-visible h3 { text-decoration: underline; text-underline-offset: 4px; }
+a.circ:focus-visible, a.stat:focus-visible { outline: 3px solid var(--sun); outline-offset: 6px; }
 
 /* ---------- Tab-achtige accordion (klassiek, "wie zijn wij") ---------- */
 [data-theme="classic"] .detail-panel { border: 1px solid var(--line); border-radius: var(--r-sm); }

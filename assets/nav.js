@@ -28,6 +28,34 @@
     });
   });
 
+  // Springt een link naar een dichtgeklapt paneel (<details>), klap het dan open.
+  function openTargetPanel() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var el = id && document.getElementById(id);
+    if (el && el.tagName === "DETAILS") el.open = true;
+  }
+  openTargetPanel();
+  window.addEventListener("hashchange", openTargetPanel);
+
+  // Pagina geopend met een #anker (link vanaf een andere pagina): spring direct
+  // naar het doel. De vloeiende sprong van de browser (scroll-behavior: smooth)
+  // wordt anders afgebroken zodra foto's en lettertypes nog binnenkomen, en dan
+  // blijft de bezoeker bovenaan staan. Na het laden van alles nog één keer,
+  // tenzij de bezoeker intussen zelf is gaan scrollen.
+  if (location.hash) {
+    var jumpToTarget = function () {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var el = id && document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "instant", block: "start" });
+    };
+    var userScrolled = false;
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (ev) {
+      window.addEventListener(ev, function () { userScrolled = true; }, { once: true, passive: true });
+    });
+    jumpToTarget();
+    window.addEventListener("load", function () { if (!userScrolled) jumpToTarget(); });
+  }
+
   // Sluit dropdowns bij klik buiten of Escape
   document.addEventListener("click", function () {
     subs.forEach(function (s) { s.setAttribute("data-open", "false"); s.querySelector("button").setAttribute("aria-expanded", "false"); });
